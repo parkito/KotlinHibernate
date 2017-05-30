@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.roommate.database.controller</groupId>
+        <artifactId>database-controller</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>app</artifactId>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.roommate.database.controller</groupId>
+            <artifactId>controller</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>database-controller</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                        <warName>Portal</warName>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.liquibase</groupId>
+                    <artifactId>liquibase-maven-plugin</artifactId>
+                    <version>3.5.3</version>
+                    <configuration>
+                        <changeLogFile>src/main/resources/db/tables/dbStructure.xml</changeLogFile>
+                        <driver>com.mysql.jdbc.Driver</driver>
+                        <url>${liquibase.db.url}</url>
+                        <username>${liquibase.db.user}</username>
+                        <password>${liquibase.db.password}</password>
+                        <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>${liquibase.exec.goal}</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>update</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <liquibase.exec.goal>update</liquibase.exec.goal>
+                <liquibase.exec.prompt>false</liquibase.exec.prompt>
+                <liquibase.db.url>jdbc:mysql://127.0.0.1:3306/mydb</liquibase.db.url>
+                <liquibase.db.user>root</liquibase.db.user>
+                <liquibase.db.password>214189</liquibase.db.password>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>updateSQL</id>
+            <properties>
+                <liquibase.exec.goal>updateSQL</liquibase.exec.goal>
+                <liquibase.exec.prompt>true</liquibase.exec.prompt>
+                <liquibase.db.url>jdbc:mysql://127.0.0.1:3306/mydb</liquibase.db.url>
+                <liquibase.db.user>root</liquibase.db.user>
+                <liquibase.db.password>214189</liquibase.db.password>
+            </properties>
+        </profile>
+    </profiles>
+
+
+    <properties>
+        <build.version>${project.version}</build.version>
+        <build.date>${maven.build.timestamp}</build.date>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
+
+
+</project>
