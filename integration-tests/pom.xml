@@ -10,7 +10,7 @@
         <version>1.0</version>
     </parent>
 
-    <groupId>com.roommate.database.integrations</groupId>
+    <groupId>com.roommate.database.controller</groupId>
     <artifactId>integration-tests</artifactId>
     <version>1.0</version>
 
@@ -33,11 +33,7 @@
             <artifactId>dbunit</artifactId>
             <version>2.5.3</version>
         </dependency>
-        <dependency>
-            <groupId>com.roommate.database.controller</groupId>
-            <artifactId>app</artifactId>
-            <version>1.0</version>
-        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/com.github.springtestdbunit/spring-test-dbunit -->
         <dependency>

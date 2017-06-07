@@ -1,5 +1,4 @@
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
-import com.roommate.basecontrol.service.conf.JpaConfig;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;

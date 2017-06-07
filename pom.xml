@@ -17,7 +17,7 @@
         <module>repository</module>
         <module>service</module>
         <module>utils</module>
-        <module>integrations-tests</module>
+        <module>integration-tests</module>
     </modules>
 
     <dependencies>
