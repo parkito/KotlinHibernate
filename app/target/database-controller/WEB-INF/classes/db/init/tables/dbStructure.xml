@@ -1,0 +1,103 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="akarnov (generated)" id="1492450525573-1">
+        <createTable tableName="Grup">
+            <column autoIncrement="true" name="idGroups" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Title" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-2">
+        <createTable tableName="Room">
+            <column autoIncrement="true" name="idRooms" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Title" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MaxMembers" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-3">
+        <createTable tableName="Room_has_Grup">
+            <column name="Room_idRooms" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Grup_idGroups" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-4">
+        <createTable tableName="User">
+            <column autoIncrement="true" name="idUsers" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Name" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SecondName" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Email" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Password" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-5">
+        <createTable tableName="User_has_Grup">
+            <column name="User_idUsers" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Grup_idGroups" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-6">
+        <addPrimaryKey columnNames="Room_idRooms, Grup_idGroups" constraintName="PRIMARY" tableName="Room_has_Grup"/>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-7">
+        <addPrimaryKey columnNames="User_idUsers, Grup_idGroups" constraintName="PRIMARY" tableName="User_has_Grup"/>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-8">
+        <createIndex indexName="fk_Room_has_Grup_Grup1_idx" tableName="Room_has_Grup">
+            <column name="Grup_idGroups"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-9">
+        <createIndex indexName="fk_Room_has_Grup_Room1_idx" tableName="Room_has_Grup">
+            <column name="Room_idRooms"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-10">
+        <createIndex indexName="fk_User_has_Grup_Grup1_idx" tableName="User_has_Grup">
+            <column name="Grup_idGroups"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-11">
+        <createIndex indexName="fk_User_has_Grup_User1_idx" tableName="User_has_Grup">
+            <column name="User_idUsers"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-12">
+        <addForeignKeyConstraint baseColumnNames="Grup_idGroups" baseTableName="Room_has_Grup" constraintName="fk_Room_has_Grup_Grup1" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="idGroups" referencedTableName="Grup"/>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-13">
+        <addForeignKeyConstraint baseColumnNames="Room_idRooms" baseTableName="Room_has_Grup" constraintName="fk_Room_has_Grup_Room1" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="idRooms" referencedTableName="Room"/>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-14">
+        <addForeignKeyConstraint baseColumnNames="Grup_idGroups" baseTableName="User_has_Grup" constraintName="fk_User_has_Grup_Grup1" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="idGroups" referencedTableName="Grup"/>
+    </changeSet>
+    <changeSet author="akarnov (generated)" id="1492450525573-15">
+        <addForeignKeyConstraint baseColumnNames="User_idUsers" baseTableName="User_has_Grup" constraintName="fk_User_has_Grup_User1" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="idUsers" referencedTableName="User"/>
+    </changeSet>
+</databaseChangeLog>

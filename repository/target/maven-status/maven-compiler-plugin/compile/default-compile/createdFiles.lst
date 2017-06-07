@@ -1,0 +1,12 @@
+com/roommate/basecontrol/repository/dao/implementation/GenericDAOImpl.class
+com/roommate/basecontrol/repository/dao/api/GenericDAO.class
+com/roommate/basecontrol/repository/dao/implementation/RoomDAOImpl.class
+com/roommate/basecontrol/repository/entities/Group.class
+com/roommate/basecontrol/repository/dao/api/GroupDAO.class
+com/roommate/basecontrol/repository/BaseControlRepositoryConfig.class
+com/roommate/basecontrol/repository/entities/Room.class
+com/roommate/basecontrol/repository/dao/implementation/UserDAOImpl.class
+com/roommate/basecontrol/repository/dao/implementation/GroupDAOImpl.class
+com/roommate/basecontrol/repository/entities/User.class
+com/roommate/basecontrol/repository/dao/api/RoomDAO.class
+com/roommate/basecontrol/repository/dao/api/UserDAO.class

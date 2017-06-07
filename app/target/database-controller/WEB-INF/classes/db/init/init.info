@@ -1,0 +1,2 @@
+./liquibase --driver=com.mysql.jdbc.Driver --classpath=mysql-connector-java-5.1.41-bin.jar --changeLogFile="C:\Users\akarnov\Downloads\dbStructure.xml" --url="jdbc:mysql://127.0.0.1:3306/mydb" --username=root --password=214189 generateChangeLog
+./liquibase --driver=com.mysql.jdbc.Driver --classpath=mysql-connector-java-5.1.41-bin.jar --changeLogFile="C:\Users\akarnov\Downloads\dbData.xml" --url="jdbc:mysql://127.0.0.1:3306/mydb" --username=root --password=214189 --diffTypes="data" generateChangeLog
