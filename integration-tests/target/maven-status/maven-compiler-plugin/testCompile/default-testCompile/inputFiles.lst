@@ -1,4 +1,10 @@
-/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/integration-tests/src/test/java/TestConfig.java
-/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/integration-tests/src/test/java/JpaConfig.java
-/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/integration-tests/src/test/java/DataBaseExisting.java
-/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/integration-tests/src/test/java/DataSetGenerator.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\DataBaseExisting.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\TestConfig.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\config\TestContext.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\config\WebAppContext.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\JpaConfig.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\config\TestApplicationConfig.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\config\PersistenceContext.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\config\TestApplicationContext.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\controllers\StartWebAppTest.java
+C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\integration-tests\src\test\java\DataSetGenerator.java

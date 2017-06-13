@@ -1,4 +1,4 @@
-com/roommate/basecontrol/service/implementation/UserClientServiceImpl.class
-com/roommate/basecontrol/service/api/UserClientService.class
-com/roommate/basecontrol/service/api/GroupClientService.class
-com/roommate/basecontrol/service/api/RoomClientService.class
+com\roommate\basecontrol\service\api\UserClientService.class
+com\roommate\basecontrol\service\implementation\UserClientServiceImpl.class
+com\roommate\basecontrol\service\api\RoomClientService.class
+com\roommate\basecontrol\service\api\GroupClientService.class

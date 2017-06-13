@@ -1,3 +1,5 @@
-com/roommate/basecontrol/service/conf/AppInitializer.class
-com/roommate/basecontrol/service/conf/AppConfig.class
-com/roommate/basecontrol/service/conf/JpaConfig.class
+com\roommate\basecontrol\service\conf\JpaConfig.class
+com\roommate\basecontrol\service\conf\HomeController.class
+com\roommate\basecontrol\service\conf\SwaggerConfiguration.class
+com\roommate\basecontrol\service\conf\AppConfig.class
+com\roommate\basecontrol\service\conf\AppInitializer.class
