@@ -1,4 +1,4 @@
-package com.roommate.basecontrol.service.conf;
+package com.roommate.basecontrol.app.conf;
 
 import com.roommate.basecontrol.controllers.BaseControlRestConfig;
 import org.springframework.context.annotation.Import;
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Import({
         BaseControlRestConfig.class,
         JpaConfig.class,
-        SwaggerConfiguration.class
+        SwaggerConfig.class
 })
 @EnableWebMvc
 public class AppConfig extends WebMvcConfigurerAdapter {

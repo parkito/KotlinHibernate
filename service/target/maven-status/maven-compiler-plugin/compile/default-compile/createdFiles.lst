@@ -1,8 +1,8 @@
-com\roommate\basecontrol\service\api\GroupService.class
-com\roommate\basecontrol\service\api\UserService.class
-com\roommate\basecontrol\service\implementation\RoomServiceImpl.class
-com\roommate\basecontrol\service\BaseControlServiceConfig.class
-com\roommate\basecontrol\service\implementation\UserServiceImpl.class
-com\roommate\basecontrol\service\implementation\GroupServiceImpl.class
-com\roommate\basecontrol\service\api\RoomService.class
-com\roommate\basecontrol\service\api\GenericService.class
+com/roommate/basecontrol/service/api/GroupService.class
+com/roommate/basecontrol/service/api/RoomService.class
+com/roommate/basecontrol/service/implementation/RoomServiceImpl.class
+com/roommate/basecontrol/service/BaseControlServiceConfig.class
+com/roommate/basecontrol/service/implementation/UserServiceImpl.class
+com/roommate/basecontrol/service/implementation/GroupServiceImpl.class
+com/roommate/basecontrol/service/api/UserService.class
+com/roommate/basecontrol/service/api/GenericService.class

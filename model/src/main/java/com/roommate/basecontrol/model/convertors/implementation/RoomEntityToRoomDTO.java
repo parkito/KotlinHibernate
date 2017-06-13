@@ -1,7 +1,7 @@
 package com.roommate.basecontrol.model.convertors.implementation;
 
-import com.roommate.basecontrol.model.dto.RoomDTO;
 import com.roommate.basecontrol.model.convertors.api.EntityToDTOConverter;
+import com.roommate.basecontrol.model.dto.RoomDTO;
 import com.roommate.basecontrol.repository.entities.Room;
 import org.springframework.stereotype.Component;
 

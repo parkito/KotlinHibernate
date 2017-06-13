@@ -1,4 +1,4 @@
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\client\src\main\java\com\roommate\basecontrol\service\api\GroupClientService.java
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\client\src\main\java\com\roommate\basecontrol\service\implementation\UserClientServiceImpl.java
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\client\src\main\java\com\roommate\basecontrol\service\api\UserClientService.java
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\client\src\main\java\com\roommate\basecontrol\service\api\RoomClientService.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/client/src/main/java/com/roommate/basecontrol/client/implementation/UserClientServiceImpl.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/client/src/main/java/com/roommate/basecontrol/client/api/GroupClientService.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/client/src/main/java/com/roommate/basecontrol/client/api/RoomClientService.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/client/src/main/java/com/roommate/basecontrol/client/api/UserClientService.java

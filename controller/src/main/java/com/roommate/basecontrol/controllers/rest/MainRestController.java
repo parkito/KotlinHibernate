@@ -1,4 +1,4 @@
-package com.roommate.basecontrol.controllers.restControllers;
+package com.roommate.basecontrol.controllers.rest;
 
 
 import com.roommate.basecontrol.model.convertors.implementation.UserEntityToUserDTO;

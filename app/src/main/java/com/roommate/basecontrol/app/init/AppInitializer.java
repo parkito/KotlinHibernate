@@ -1,5 +1,6 @@
-package com.roommate.basecontrol.service.conf;
+package com.roommate.basecontrol.app.init;
 
+import com.roommate.basecontrol.app.conf.AppConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;

@@ -1,10 +1,10 @@
 package com.roommate.basecontrol.model.convertors.implementation;
 
+import com.roommate.basecontrol.utils.exceptions.EntityToDTOConvertException;
 import com.roommate.basecontrol.model.convertors.api.DTOtoEntityConverter;
 import com.roommate.basecontrol.model.dto.UserDTO;
 import com.roommate.basecontrol.repository.entities.User;
 import com.roommate.basecontrol.service.api.UserService;
-import com.roommate.basecontrol.utils.exceptions.EntityToDTOConvertException;
 import com.roommate.basecontrol.utils.exceptions.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

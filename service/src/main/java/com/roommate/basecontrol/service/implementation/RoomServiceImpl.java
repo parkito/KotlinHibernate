@@ -1,11 +1,11 @@
 package com.roommate.basecontrol.service.implementation;
 
 
+import com.roommate.basecontrol.utils.exceptions.EntityAlreadyExistsException;
 import com.roommate.basecontrol.service.api.RoomService;
 import com.roommate.basecontrol.repository.dao.api.RoomDAO;
 import com.roommate.basecontrol.repository.entities.Room;
 import com.roommate.basecontrol.utils.exceptions.DAOException;
-import com.roommate.basecontrol.utils.exceptions.EntityAlreadyExistsException;
 import com.roommate.basecontrol.utils.exceptions.RoomNotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,14 +1,14 @@
-package com.roommate.basecontrol.controllers.restControllers;
+package com.roommate.basecontrol.controllers.rest;
 
-import com.roommate.basecontrol.model.convertors.implementation.UserDTOtoUserEntity;
 import com.roommate.basecontrol.model.convertors.implementation.UserEntityToUserDTO;
+import com.roommate.basecontrol.utils.exceptions.GroupNotFoundException;
+import com.roommate.basecontrol.model.convertors.implementation.UserDTOtoUserEntity;
 import com.roommate.basecontrol.model.dto.UserDTO;
 import com.roommate.basecontrol.repository.entities.Group;
 import com.roommate.basecontrol.repository.entities.User;
 import com.roommate.basecontrol.service.api.GroupService;
 import com.roommate.basecontrol.service.api.UserService;
 import com.roommate.basecontrol.utils.exceptions.DAOException;
-import com.roommate.basecontrol.utils.exceptions.GroupNotFoundException;
 import com.roommate.basecontrol.utils.exceptions.UserNotFoundException;
 import com.roommate.basecontrol.utils.security.PasswordChecker;
 import io.swagger.annotations.Api;

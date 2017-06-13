@@ -1,5 +1,5 @@
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\controller\src\main\java\com\roommate\basecontrol\controllers\restControllers\MainRestController.java
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\controller\src\main\java\com\roommate\basecontrol\controllers\restControllers\GroupController.java
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\controller\src\main\java\com\roommate\basecontrol\controllers\restControllers\UserController.java
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\controller\src\main\java\com\roommate\basecontrol\controllers\BaseControlRestConfig.java
-C:\Users\akarnov\GitHub\ProjectRooMMate\RooMMateDataBaseController\controller\src\main\java\com\roommate\basecontrol\controllers\restControllers\RoomController.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/controller/src/main/java/com/roommate/basecontrol/controllers/BaseControlRestConfig.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/controller/src/main/java/com/roommate/basecontrol/controllers/rest/MainRestController.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/controller/src/main/java/com/roommate/basecontrol/controllers/rest/UserController.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/controller/src/main/java/com/roommate/basecontrol/controllers/rest/RoomController.java
+/home/parkito/GitHub/RooMMateProject/RooMMateDataBaseController/controller/src/main/java/com/roommate/basecontrol/controllers/rest/GroupController.java

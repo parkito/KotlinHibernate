@@ -1,12 +1,12 @@
 package com.roommate.basecontrol.service.implementation;
 
 
-import com.roommate.basecontrol.service.api.GroupService;
 import com.roommate.basecontrol.repository.dao.api.GroupDAO;
 import com.roommate.basecontrol.repository.entities.Group;
-import com.roommate.basecontrol.utils.exceptions.DAOException;
+import com.roommate.basecontrol.service.api.GroupService;
 import com.roommate.basecontrol.utils.exceptions.EntityAlreadyExistsException;
 import com.roommate.basecontrol.utils.exceptions.GroupNotFoundException;
+import com.roommate.basecontrol.utils.exceptions.DAOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,10 @@
+controllers/StartWebAppTest.class
 JpaConfig.class
-controllers\StartWebAppTest.class
-config\TestApplicationConfig.class
-config\WebAppContext.class
+config/PersistenceContext.class
 DataSetGenerator.class
 TestConfig.class
-config\PersistenceContext.class
-config\TestContext.class
-config\TestApplicationContext.class
+config/TestApplicationConfig.class
+config/TestApplicationContext.class
 DataBaseExisting.class
+config/WebAppContext.class
+config/TestContext.class

@@ -1,4 +1,4 @@
-package com.roommate.basecontrol.service.conf;
+package com.roommate.basecontrol.app.conf;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;

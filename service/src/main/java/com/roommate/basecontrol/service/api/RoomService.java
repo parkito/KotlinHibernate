@@ -9,5 +9,5 @@ import com.roommate.basecontrol.utils.exceptions.RoomNotFoundException;
  *         artem.karnov@t-systems.com
  **/
 public interface RoomService extends GenericService<Room, Integer> {
-    public com.roommate.basecontrol.repository.entities.Room getRoomByTitle(String title) throws RoomNotFoundException;
+    public Room getRoomByTitle(String title) throws RoomNotFoundException;
 }

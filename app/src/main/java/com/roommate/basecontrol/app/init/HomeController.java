@@ -1,4 +1,4 @@
-package com.roommate.basecontrol.service.conf;
+package com.roommate.basecontrol.app.init;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

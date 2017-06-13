@@ -1,5 +1,5 @@
-com\roommate\basecontrol\controllers\restControllers\MainRestController.class
-com\roommate\basecontrol\controllers\restControllers\GroupController.class
-com\roommate\basecontrol\controllers\BaseControlRestConfig.class
-com\roommate\basecontrol\controllers\restControllers\UserController.class
-com\roommate\basecontrol\controllers\restControllers\RoomController.class
+com/roommate/basecontrol/controllers/BaseControlRestConfig.class
+com/roommate/basecontrol/controllers/rest/RoomController.class
+com/roommate/basecontrol/controllers/rest/GroupController.class
+com/roommate/basecontrol/controllers/rest/MainRestController.class
+com/roommate/basecontrol/controllers/rest/UserController.class

@@ -1,7 +1,7 @@
 package com.roommate.basecontrol.controllers;
 
-import com.roommate.basecontrol.model.BaseControlModelConfig;
 import com.roommate.basecontrol.service.BaseControlServiceConfig;
+import com.roommate.basecontrol.model.BaseControlModelConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ import org.springframework.web.context.request.RequestContextListener;
  *         artem.karnov@t-systems.com
  */
 @Configuration
-@ComponentScan(basePackages = {"com.roommate.basecontrol.controllers.restControllers"})
+@ComponentScan(basePackages = {"com.roommate.basecontrol.controllers.rest"})
 @Import({BaseControlServiceConfig.class,
         BaseControlModelConfig.class})
 public class BaseControlRestConfig {

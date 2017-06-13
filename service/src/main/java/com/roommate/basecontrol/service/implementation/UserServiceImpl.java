@@ -1,16 +1,15 @@
 package com.roommate.basecontrol.service.implementation;
 
 
+import com.roommate.basecontrol.utils.exceptions.EntityAlreadyExistsException;
 import com.roommate.basecontrol.repository.dao.api.UserDAO;
 import com.roommate.basecontrol.repository.entities.User;
 import com.roommate.basecontrol.service.api.UserService;
 import com.roommate.basecontrol.utils.exceptions.DAOException;
-import com.roommate.basecontrol.utils.exceptions.EntityAlreadyExistsException;
 import com.roommate.basecontrol.utils.exceptions.UserNotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
