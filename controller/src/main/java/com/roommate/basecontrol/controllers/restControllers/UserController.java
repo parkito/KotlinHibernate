@@ -104,6 +104,7 @@ public class UserController {
         return new ResponseEntity<List<UserDTO>>(userDTOS, HttpStatus.OK);
     }
 
+    // TODO: 13.06.2017 are you sure? Method looks like shit
     @RequestMapping(value = "/saveNewUser", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity persisUser(HttpServletRequest req,
@@ -160,6 +161,8 @@ public class UserController {
 
     }
 
+    // TODO: 13.06.2017 Implement this logic int other place
+    @Deprecated
     @RequestMapping(value = "/addToGroup", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity userToGroup(HttpServletRequest req,
