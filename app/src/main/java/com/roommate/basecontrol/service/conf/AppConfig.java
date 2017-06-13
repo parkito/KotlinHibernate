@@ -1,7 +1,6 @@
 package com.roommate.basecontrol.service.conf;
 
 import com.roommate.basecontrol.controllers.BaseControlRestConfig;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -16,9 +15,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Import({
         BaseControlRestConfig.class,
         JpaConfig.class,
+        SwaggerConfiguration.class
 })
 @EnableWebMvc
-@ComponentScan(basePackages = "com.roommate.basecontrol")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
     @Override
@@ -28,10 +27,8 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
-
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }

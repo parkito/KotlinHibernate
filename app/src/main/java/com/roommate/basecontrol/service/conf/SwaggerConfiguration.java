@@ -1,8 +1,10 @@
 package com.roommate.basecontrol.service.conf;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.service.ApiInfo;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -11,19 +13,19 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author Artem Karnov @date 13.06.2017.
  *         artem.karnov@t-systems.com
  */
-
 @Configuration
 @EnableSwagger2
+@ComponentScan(basePackages = "com.roommate.basecontrol")
 public class SwaggerConfiguration {
-//    @Bean
-//    public Docket api() {
-//        return new Docket(DocumentationType.SWAGGER_2)
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build();
 //                .select()
-//                .apis(RequestHandlerSelectors.any())
-//                .paths(PathSelectors.any())
-//                .build();
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.roommate.basecontrol.controllers.restControllers"))
+//                .apis(RequestHandlerSelectors.basePackage("com.roommate.basecontrol"))
 //                .paths(PathSelectors.regex("/.*"))
 //                .build()
 //                .pathMapping("/")
@@ -36,28 +38,28 @@ public class SwaggerConfiguration {
 //                                .responseModel(new ModelRef("Error"))
 //                                .build()))
 //                .enableUrlTemplating(false);
+    }
+
+//    @Bean
+//    public Docket restfulApi() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .groupName("restful-api")
+//                .select()
+//                .build()
+//                .apiInfo(apiInfo());
 //    }
-
-    @Bean
-    public Docket restfulApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("restful-api")
-                .select()
-                .build()
-                .apiInfo(apiInfo());
-    }
-
-    private ApiInfo apiInfo() {
-
-        ApiInfo apiInfo = new ApiInfo(
-                "My Apps API Title",
-                "My Apps API Description",
-                "My Apps API Version",
-                "My Apps API terms of service",
-                "My Apps API Contact Email",
-                "My Apps API Licence Type",
-                "My Apps API License URL"
-        );
-        return apiInfo;
-    }
+//
+//    private ApiInfo apiInfo() {
+//
+//        ApiInfo apiInfo = new ApiInfo(
+//                "My Apps API Title",
+//                "My Apps API Description",
+//                "My Apps API Version",
+//                "My Apps API terms of service",
+//                "My Apps API Contact Email",
+//                "My Apps API Licence Type",
+//                "My Apps API License URL"
+//        );
+//        return apiInfo;
+//    }
 }
