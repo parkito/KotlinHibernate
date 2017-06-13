@@ -29,12 +29,6 @@
 
         <dependency>
             <groupId>com.roommate.database.controller</groupId>
-            <artifactId>model</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.roommate.database.controller</groupId>
             <artifactId>repository</artifactId>
             <version>1.0</version>
         </dependency>
@@ -47,6 +41,16 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
             </dependency>
 
         </dependencies>

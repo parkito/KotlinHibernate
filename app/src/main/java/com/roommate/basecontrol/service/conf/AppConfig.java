@@ -13,8 +13,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  *         artem.karnov@t-systems.com
  **/
 
-@Import({BaseControlRestConfig.class,
-        JpaConfig.class})
+@Import({
+        BaseControlRestConfig.class,
+        JpaConfig.class,
+})
 @EnableWebMvc
 @ComponentScan(basePackages = "com.roommate.basecontrol")
 public class AppConfig extends WebMvcConfigurerAdapter {

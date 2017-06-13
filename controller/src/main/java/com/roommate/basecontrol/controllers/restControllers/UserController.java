@@ -11,6 +11,7 @@ import com.roommate.basecontrol.utils.exceptions.DAOException;
 import com.roommate.basecontrol.utils.exceptions.GroupNotFoundException;
 import com.roommate.basecontrol.utils.exceptions.UserNotFoundException;
 import com.roommate.basecontrol.utils.security.PasswordChecker;
+import io.swagger.annotations.Api;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping(value = "/user")
+@Api(value = "/user", description = "User REST for Integration Testing")
 public class UserController {
     private static Logger logger = LogManager.getLogger(UserController.class);
 
