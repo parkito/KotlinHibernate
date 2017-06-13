@@ -68,24 +68,6 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
-    @ResponseBody
-    public ResponseEntity<List<UserDTO>> getUserList(HttpServletRequest req,
-                                                     @RequestParam(value = "emails") List<String> emails) {
-        // TODO: 08.04.17 to optimize with named query
-        // TODO: 08.04.17 make feature that allow recognize not fully existing
-        List<User> users = new ArrayList();
-        for (String currentEmail : emails) {
-            try {
-                users.add(userService.getUserByEMAil(currentEmail));
-            } catch (UserNotFoundException ex) {
-                logger.warn("User " + currentEmail + " required by " + req.getHeader("service") + " wasn't found.");
-            }
-        }
-        List<UserDTO> userDTOS = userToUserDTO.convertList(users);
-        return new ResponseEntity<List<UserDTO>>(userDTOS, HttpStatus.OK);
-    }
-
     @RequestMapping(value = "/getUserByEmail", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<UserDTO> getUserByEmail(HttpServletRequest req,
@@ -101,7 +83,26 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/persistUser", method = RequestMethod.GET)
+    @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<List<UserDTO>> getUserList(HttpServletRequest req,
+                                                     @RequestParam(value = "emails") List<String> emails) {
+        // TODO: 08.04.17 to optimize with named query
+        // TODO: 08.04.17 make feature that allow recognize not fully existing
+        //for this should be created new repository system
+        List<User> users = new ArrayList();
+        for (String currentEmail : emails) {
+            try {
+                users.add(userService.getUserByEMAil(currentEmail));
+            } catch (UserNotFoundException ex) {
+                logger.warn("User " + currentEmail + " required by " + req.getHeader("service") + " wasn't found.");
+            }
+        }
+        List<UserDTO> userDTOS = userToUserDTO.convertList(users);
+        return new ResponseEntity<List<UserDTO>>(userDTOS, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/saveNewUser", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity persisUser(HttpServletRequest req,
                                      @RequestParam(value = "user") UserDTO userDTO,
@@ -118,7 +119,7 @@ public class UserController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/persistUsers", method = RequestMethod.GET)
+    @RequestMapping(value = "/saveNewUsers", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity persistUsers(HttpServletRequest req,
                                        @RequestParam(value = "users") Map<UserDTO, String> usersMap) {
