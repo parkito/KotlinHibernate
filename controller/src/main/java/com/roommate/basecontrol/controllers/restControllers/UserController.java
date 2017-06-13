@@ -62,7 +62,7 @@ public class UserController {
                 return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
             }
         } catch (UserNotFoundException ex) {
-            logger.warn("User " + email + " required by " + req.getHeader("service") + " wasn't found.");
+            logger.warn("User " + email + " required by " + req.getHeader("service") + " wasn't found." + ex);
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
 
@@ -77,7 +77,7 @@ public class UserController {
             UserDTO result = userToUserDTO.convert(user);
             return new ResponseEntity(result, HttpStatus.OK);
         } catch (UserNotFoundException ex) {
-            logger.warn("User " + email + " required by " + req.getHeader("service") + " wasn't found.");
+            logger.warn("User " + email + " required by " + req.getHeader("service") + " wasn't found." + ex);
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
 
@@ -95,7 +95,7 @@ public class UserController {
             try {
                 users.add(userService.getUserByEMAil(currentEmail));
             } catch (UserNotFoundException ex) {
-                logger.warn("User " + currentEmail + " required by " + req.getHeader("service") + " wasn't found.");
+                logger.warn("User " + currentEmail + " required by " + req.getHeader("service") + " wasn't found." + ex);
             }
         }
         List<UserDTO> userDTOS = userToUserDTO.convertList(users);
@@ -113,7 +113,7 @@ public class UserController {
             user.setPassword(PasswordChecker.cryptPassword(password));
             userService.createEntity(user);
         } catch (DAOException ex) {
-            logger.warn("User " + userDTO.getEmail() + " required by " + req.getHeader("service") + " already exists.");
+            logger.warn("User " + userDTO.getEmail() + " required by " + req.getHeader("service") + " already exists." + ex);
             return new ResponseEntity(HttpStatus.CONFLICT);
         }
         return new ResponseEntity(HttpStatus.OK);
@@ -130,11 +130,32 @@ public class UserController {
                 user.setPassword(PasswordChecker.cryptPassword(usersMap.get(currentUser)));
                 userService.createEntity(user);
             } catch (DAOException ex) {
-                logger.warn("User " + currentUser.getEmail() + " required by " + req.getHeader("service") + " already exists.");
+                logger.warn("User " + currentUser.getEmail() + " required by " + req.getHeader("service") + " already exists." + ex);
 
             }
         }
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/updateUser", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity updateUser(HttpServletRequest req,
+                                     @RequestParam(value = "users") UserDTO user) {
+        try {
+            User existedUser = userService.getUserByEMAil(user.getEmail());
+            if (existedUser.getEmail().equals(user.getEmail())) {
+                User updatedUser = userDTOtoUser.convert(user);
+                userService.updateEntity(updatedUser);
+            } else {
+                logger.warn("User " + user.getEmail() + "wasn't found");
+                return new ResponseEntity(HttpStatus.CONFLICT);
+            }
+        } catch (DAOException ex) {
+            logger.warn("User " + user.getEmail() + "wasn't updated " + ex);
+            return new ResponseEntity(HttpStatus.CONFLICT);
+        }
+        return new ResponseEntity(HttpStatus.OK);
+
     }
 
     @RequestMapping(value = "/addToGroup", method = RequestMethod.GET)
@@ -147,14 +168,14 @@ public class UserController {
         try {
             user = userService.getUserByEMAil(userEmail);
         } catch (UserNotFoundException ex) {
-            logger.warn("User " + userEmail + " required by " + req.getHeader("service") + " wasn't found.");
+            logger.warn("User " + userEmail + " required by " + req.getHeader("service") + " wasn't found." + ex);
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
 
         try {
             group = groupService.getGroupByTitle(groupTitle);
         } catch (GroupNotFoundException ex) {
-            logger.warn("Group " + groupTitle + " required by " + req.getHeader("service") + " wasn't found.");
+            logger.warn("Group " + groupTitle + " required by " + req.getHeader("service") + " wasn't found." + ex);
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
 
