@@ -167,7 +167,8 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <finalName>Portal</finalName>
+	<finalName>Portal</finalName>
+
     </build>
 
     <properties>
