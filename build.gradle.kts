@@ -24,6 +24,7 @@ val test by tasks.getting(Test::class) {
 dependencies {
     val kotlinVersion = "1.2.51"
     val springBootVersion = "2.0.5.RELEASE"
+    val junit5Version = "5.3.1"
 
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     compile("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
@@ -33,6 +34,8 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test") {
         exclude(module = "junit")
     }
-    testImplementation("org.junit.jupiter:junit-jupiter-api")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testCompile("org.junit.jupiter:junit-jupiter-api:$junit5Version")
+    testCompile("org.junit.jupiter:junit-jupiter-params:$junit5Version")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:$junit5Version")
+    testRuntime("org.junit.platform:junit-platform-launcher:1.3.1")
 }
