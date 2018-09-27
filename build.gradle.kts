@@ -30,6 +30,7 @@ dependencies {
     compile("com.h2database:h2:1.4.197")
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     compile("org.jetbrains.kotlin:kotlin-reflect")
+    compile("org.projectlombok:lombok:1.18.2")
     testCompile("org.springframework.boot:spring-boot-starter-test") {
         exclude(module = "junit")
     }
