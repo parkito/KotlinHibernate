@@ -12,22 +12,21 @@ import javax.persistence.OneToOne
 import javax.persistence.PrimaryKeyJoinColumn
 
 @Entity
-@Builder
 data class User(
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE)
-        val userId: Long = Long.ZERO,
+        var userId: Long = Long.ZERO,
 
         @Column(nullable = false, unique = true)
-        val email: String = String.EMPTY,
+        var email: String = String.EMPTY,
 
         @Column(nullable = false)
-        val firstName: String = String.EMPTY,
+        var firstName: String = String.EMPTY,
 
         @Column(nullable = false)
-        val lastName: String = String.EMPTY,
+        var lastName: String = String.EMPTY,
 
         @OneToOne(fetch = FetchType.LAZY)
         @PrimaryKeyJoinColumn
-        val personalData: PersonalData = PersonalData()
+        var personalData: PersonalData = PersonalData()
 )
