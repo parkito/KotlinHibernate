@@ -1,11 +1,11 @@
-package com.parkito.learnmicro.user.service.entity;
+package ru.siksmfp.hibernate.entity
 
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
 
-/**
- * @author Artem Karnov @date 11/6/2017.
- * artem.karnov@t-systems.com
- */
 @Entity
 data class User(
         @Id

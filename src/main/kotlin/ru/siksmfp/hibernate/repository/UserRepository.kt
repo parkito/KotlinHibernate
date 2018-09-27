@@ -1,14 +1,9 @@
-package com.parkito.learnmicro.user.service.repository;
+package ru.siksmfp.hibernate.repository;
 
-import com.parkito.learnmicro.user.service.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import java.util.*
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
+import ru.siksmfp.hibernate.entity.User
 
-/**
- * @author Artem Karnov @date 11/6/2017.
- * artem.karnov@t-systems.com
- */
 @Repository
 interface UserRepository : JpaRepository<User, Long> {
     fun findByEmail(email: String): User?
