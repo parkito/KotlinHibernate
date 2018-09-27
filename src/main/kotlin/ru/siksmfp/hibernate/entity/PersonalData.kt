@@ -15,7 +15,7 @@ import javax.persistence.OneToOne
 data class PersonalData(
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE)
-        val userId: Long = Long.ZERO,
+        val id: Long = Long.ZERO,
 
         @Column(nullable = false)
         val serial: String = String.EMPTY,
