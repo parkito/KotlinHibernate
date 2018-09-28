@@ -10,7 +10,6 @@ import javax.persistence.FetchType
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
-import javax.persistence.JoinColumn
 import javax.persistence.OneToMany
 import javax.persistence.OneToOne
 import javax.persistence.PrimaryKeyJoinColumn
@@ -32,9 +31,9 @@ data class User(
 
         @OneToOne(fetch = FetchType.LAZY)
         @PrimaryKeyJoinColumn
-        var personalData: PersonalData = PersonalData(),
+        var personalData: PersonalData? = null,
 
         @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
         @OnDelete(action = OnDeleteAction.CASCADE)
-        var cars: List<Car> = ArrayList()
+        var cars: List<Car>? = null
 )

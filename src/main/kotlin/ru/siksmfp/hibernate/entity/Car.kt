@@ -25,6 +25,6 @@ data class Car(
 
         @ManyToOne
         @JoinColumn(name = "user_id", nullable = false)
-        var user: User = User()
+        var user: User? = null
 
 )

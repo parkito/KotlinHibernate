@@ -14,7 +14,7 @@ class UserService {
     @Autowired
     lateinit var userRepository: UserRepository
 
-    fun findUserByEmail(email: String): User {
+    fun findUserByEmail(email: String): User? {
         return userRepository.findByEmail(email)
     }
 
@@ -32,7 +32,7 @@ class UserService {
 
     @Transactional
     fun addPersonalDataToUser(email: String, personalData: PersonalData) {
-        val user = userRepository.findByEmail(email)
+        val user: User? = userRepository.findByEmail(email)
         if (user != null) {
             user.personalData = personalData
             userRepository.save(user)
@@ -42,7 +42,7 @@ class UserService {
     }
 
     fun addCarToUser(email: String, cars: List<Car>) {
-        val user = userRepository.findByEmail(email)
+        val user: User? = userRepository.findByEmail(email)
         if (user != null) {
             user.cars = cars
             userRepository.save(user)
@@ -50,5 +50,4 @@ class UserService {
             throw SystemException("User with email = $email doesn't exist")
         }
     }
-
 }

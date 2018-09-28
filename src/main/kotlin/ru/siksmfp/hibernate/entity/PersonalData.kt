@@ -25,6 +25,6 @@ data class PersonalData(
 
         @OneToOne(fetch = FetchType.LAZY,
                 cascade = arrayOf(CascadeType.ALL),
-                mappedBy = "userProfile")
-        val user: User = User()
+                mappedBy = "personalData")
+        val user: User? = null
 )
