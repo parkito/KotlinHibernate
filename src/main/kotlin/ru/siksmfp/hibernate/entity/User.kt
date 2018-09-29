@@ -17,7 +17,7 @@ import javax.persistence.PrimaryKeyJoinColumn
 @Entity
 data class User(
         @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE)
+        @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Long = Long.ZERO,
 
         @Column(nullable = false, unique = true)

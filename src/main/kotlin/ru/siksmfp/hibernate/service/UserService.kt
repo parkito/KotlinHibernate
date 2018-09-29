@@ -23,7 +23,7 @@ class UserService {
         val existedUser: User? = userRepository.findByEmail(email);
         if (existedUser == null) {
             return userRepository.save(
-                    User(firstName = firstName, lastName = secondName)
+                    User(email = email, firstName = firstName, lastName = secondName)
             )
         } else {
             throw SystemException("User with email = $email already exists")

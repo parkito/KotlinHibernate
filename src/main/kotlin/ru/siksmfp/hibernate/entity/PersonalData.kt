@@ -14,7 +14,7 @@ import javax.persistence.OneToOne
 @Entity
 data class PersonalData(
         @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE)
+        @GeneratedValue(strategy = GenerationType.AUTO)
         val id: Long = Long.ZERO,
 
         @Column(nullable = false)

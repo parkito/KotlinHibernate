@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne
 @Entity
 data class Car(
         @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE)
+        @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Long = Long.ZERO,
 
         @Column(nullable = false, unique = true)
