@@ -18,6 +18,14 @@ class UserService {
         return userRepository.findByEmail(email)
     }
 
+    fun deleteAll() {
+        userRepository.deleteAll()
+    }
+
+    fun saveAll(users: List<User>) {
+        userRepository.saveAll(users)
+    }
+
     @Transactional
     fun createUser(email: String, firstName: String, secondName: String): User {
         val existedUser: User? = userRepository.findByEmail(email);
